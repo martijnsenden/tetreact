@@ -1,16 +1,25 @@
 import React from 'react'
 
-class Block extends React.Component {
-  render () {
-    return (
-      <svg>
-        <rect {...this.props} />
-        <path fill='#fff' fillOpacity='0.7' d={`m0,0 ${this.props.width / 8},${this.props.width / 8} ${3 * this.props.width / 4},0 ${this.props.width / 8},-${this.props.width / 8}`} />
-        <path fill='#000' fillOpacity='0.1' d={`m0,0 ${this.props.width / 8},${this.props.width / 8} 0,${3 * this.props.width / 4}, -${this.props.width / 8},${this.props.width / 8} m${this.props.width},-${this.props.width} -${this.props.width / 8},${this.props.width / 8} 0,${3 * this.props.width / 4} ${this.props.width / 8},${this.props.width / 8}`} />
-        <path fill='#000' fillOpacity='0.5' d={`m0,${this.props.width} ${this.props.width / 8},-${this.props.width / 8} ${3 * this.props.width / 4},0 ${this.props.width / 8},${this.props.width / 8}`} />
-      </svg>
-    )
-  }
+const { number, string } = React.PropTypes
+
+const Block = (props) => {
+  const { x, y, width, height, fill } = props
+  return (
+    <svg x={x} y={y} width={width} height={height} fill={fill}>
+      <rect width={width} height={height} />
+      <path fill="#fff" fillOpacity="0.7" d={`m0,0 ${width / 8},${width / 8} ${(3 * width) / 4},0 ${width / 8},-${width / 8}`} />
+      <path fill="#000" fillOpacity="0.1" d={`m0,0 ${width / 8},${width / 8} 0,${(3 * width) / 4}, -${width / 8},${width / 8} m${width},-${width} -${width / 8},${width / 8} 0,${(3 * width) / 4} ${width / 8},${width / 8}`} />
+      <path fill="#000" fillOpacity="0.5" d={`m0,${width} ${width / 8},-${width / 8} ${(3 * width) / 4},0 ${width / 8},${width / 8}`} />
+    </svg>
+  )
+}
+
+Block.propTypes = {
+  x: number,
+  y: number,
+  width: number,
+  height: number,
+  fill: string
 }
 
 export default Block

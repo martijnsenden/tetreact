@@ -1,1 +1,15 @@
-{"extends": ["standard", "standard-jsx"]}
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "jasmine": true
+  },
+  "rules": {
+    "semi": [
+      "error",
+      "never"
+    ],
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx"] }],
+    "import/extensions": [2, {"js": "never", "json": "never"}]
+  }
+}
