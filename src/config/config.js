@@ -195,4 +195,10 @@ const tetrominoes = {
   },
 }
 
-export { blockSize, tetrominoes }
+const playfield = {
+  width: 10,
+  height: 20,
+  vanishZone: 2,
+}
+
+export { blockSize, tetrominoes, playfield }

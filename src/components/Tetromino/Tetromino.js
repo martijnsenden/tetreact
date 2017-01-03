@@ -2,10 +2,10 @@ import React from 'react'
 import { blockSize, tetrominoes } from './../../config/config'
 import Block from './../Block/Block'
 
-const { string, number, bool } = React.PropTypes
+const { string, number } = React.PropTypes
 
 const Tetromino = (props) => {
-  const { type, angle, locked } = props
+  const { type, angle } = props
   const tetromino = tetrominoes[type]
   return (
     <svg width={tetromino.width * blockSize} height={tetromino.height * blockSize}>
@@ -32,7 +32,6 @@ const Tetromino = (props) => {
 Tetromino.propTypes = {
   type: string,
   angle: number,
-  locked: bool,
 }
 
 export default Tetromino

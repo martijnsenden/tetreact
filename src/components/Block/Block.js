@@ -19,7 +19,7 @@ Block.propTypes = {
   y: number,
   width: number,
   height: number,
-  fill: string
+  fill: string,
 }
 
 export default Block

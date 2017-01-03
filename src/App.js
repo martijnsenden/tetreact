@@ -1,5 +1,6 @@
 import React from 'react'
 import Tetromino from './components/Tetromino/Tetromino'
+import Playfield from './components/Playfield/Playfield'
 import logo from './logo.svg'
 import './App.css'
 
@@ -12,6 +13,7 @@ const App = () => (
     <p className="App-intro">
       To get started, edit <code>src/App.js</code> and save to reload.
     </p>
+    <Playfield />
     <Tetromino type="i" angle={0} locked={false} />
     <Tetromino type="i" angle={90} locked={false} />
     <Tetromino type="i" angle={180} locked={false} />
