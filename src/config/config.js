@@ -91,7 +91,7 @@ const tetrominoes = {
   o: {
     width: 4,
     height: 3,
-    spawnAtX: 4,
+    spawnAtX: 3,
     fill: '#FFFF00',
     angles: {
       0: [
