@@ -35,7 +35,6 @@ class Tetrion extends React.Component {
   }
 
   render() {
-    const currentTetronimo = tetrominoes[this.state.currentTetromino]
     return (
       <svg
         x="0"
@@ -46,7 +45,7 @@ class Tetrion extends React.Component {
       >
         <Playfield x={0} y={2 * blockSize} />
         <Tetromino
-          x={currentTetronimo.spawnAtX * blockSize}
+          x={3 * blockSize}
           y={0}
           type={this.state.currentTetromino}
           angle={0} locked={false}
