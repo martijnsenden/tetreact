@@ -1,5 +1,5 @@
 const blockSize = 24
-const tetrominoes = {
+const tetrominos = {
   i: {
     width: 4,
     height: 4,
@@ -201,4 +201,4 @@ const playfield = {
   vanishZone: 2,
 }
 
-export { blockSize, tetrominoes, playfield }
+export { blockSize, tetrominos, playfield }

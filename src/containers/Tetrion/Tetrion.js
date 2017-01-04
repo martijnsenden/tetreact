@@ -2,7 +2,7 @@ import React from 'react'
 import Playfield from '../../components/Playfield/Playfield'
 import Tetromino from '../../components/Tetromino/Tetromino'
 import { shuffleArray } from '../../utils/utils'
-import { tetrominoes, playfield, blockSize } from './../../config/config'
+import { tetrominos, playfield, blockSize } from './../../config/config'
 
 class Tetrion extends React.Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class Tetrion extends React.Component {
   }
 
   randomGenerate() {
-    shuffleArray(Object.keys(tetrominoes)).forEach((tetromino) => {
+    shuffleArray(Object.keys(tetrominos)).forEach((tetromino) => {
       this.state.pieceSequence.push(tetromino)
     })
   }

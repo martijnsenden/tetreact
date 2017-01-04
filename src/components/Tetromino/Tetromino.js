@@ -1,12 +1,12 @@
 import React from 'react'
-import { blockSize, tetrominoes } from './../../config/config'
+import { blockSize, tetrominos } from './../../config/config'
 import Block from './../Block/Block'
 
 const { string, number } = React.PropTypes
 
 const Tetromino = (props) => {
   const { type, angle, x, y } = props
-  const tetromino = tetrominoes[type]
+  const tetromino = tetrominos[type]
   return (
     <svg x={x} y={y} width={tetromino.width * blockSize} height={tetromino.height * blockSize}>
       {tetromino.angles[angle].map((row, rowIndex) => (
