@@ -3,6 +3,7 @@ const tetrominoes = {
   i: {
     width: 4,
     height: 4,
+    spawnAtX: 3,
     fill: '#00FFFF',
     angles: {
       0: [
@@ -34,6 +35,7 @@ const tetrominoes = {
   j: {
     width: 3,
     height: 3,
+    spawnAtX: 1,
     fill: '#0000FF',
     angles: {
       0: [
@@ -61,6 +63,7 @@ const tetrominoes = {
   l: {
     width: 3,
     height: 3,
+    spawnAtX: 1,
     fill: '#FFA100',
     angles: {
       0: [
@@ -88,6 +91,7 @@ const tetrominoes = {
   o: {
     width: 4,
     height: 3,
+    spawnAtX: 4,
     fill: '#FFFF00',
     angles: {
       0: [
@@ -115,6 +119,7 @@ const tetrominoes = {
   s: {
     width: 3,
     height: 3,
+    spawnAtX: 1,
     fill: '#00FF00',
     angles: {
       0: [
@@ -142,6 +147,7 @@ const tetrominoes = {
   t: {
     width: 3,
     height: 3,
+    spawnAtX: 1,
     fill: '#8F00FF',
     angles: {
       0: [
@@ -169,6 +175,7 @@ const tetrominoes = {
   z: {
     width: 3,
     height: 3,
+    spawnAtX: 1,
     fill: '#FF0000',
     angles: {
       0: [

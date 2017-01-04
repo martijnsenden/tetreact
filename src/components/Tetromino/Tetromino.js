@@ -5,10 +5,10 @@ import Block from './../Block/Block'
 const { string, number } = React.PropTypes
 
 const Tetromino = (props) => {
-  const { type, angle } = props
+  const { type, angle, x, y } = props
   const tetromino = tetrominoes[type]
   return (
-    <svg width={tetromino.width * blockSize} height={tetromino.height * blockSize}>
+    <svg x={x} y={y} width={tetromino.width * blockSize} height={tetromino.height * blockSize}>
       {tetromino.angles[angle].map((row, rowIndex) => (
         row.map((cell, cellIndex) => {
           if (cell === 1) {
@@ -32,6 +32,8 @@ const Tetromino = (props) => {
 Tetromino.propTypes = {
   type: string,
   angle: number,
+  x: number,
+  y: number,
 }
 
 export default Tetromino
