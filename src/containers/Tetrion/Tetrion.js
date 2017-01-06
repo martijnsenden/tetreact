@@ -1,8 +1,8 @@
 import React from 'react'
+import { shuffle } from 'lodash'
 import Playfield from '../../components/Playfield/Playfield'
 import Tetromino from '../../components/Tetromino/Tetromino'
-import { shuffleArray } from '../../utils/utils'
-import { tetrominos, playfield, blockSize } from './../../config/config'
+import { tetrominos, playfield, blockSize, defaultRotationSystem } from '../../config/config'
 
 class Tetrion extends React.Component {
   constructor(props) {
@@ -10,17 +10,19 @@ class Tetrion extends React.Component {
     this.state = {
       pieceSequence: [],
       currentTetromino: null,
+      rotationSystem: defaultRotationSystem,
     }
   }
 
   componentWillMount() {
     if (!this.state.currentTetromino) {
       this.drawTetromino()
+      setInterval(this.drawTetromino.bind(this), 1000)
     }
   }
 
   randomGenerate() {
-    shuffleArray(Object.keys(tetrominos)).forEach((tetromino) => {
+    shuffle(Object.keys(tetrominos)).forEach((tetromino) => {
       this.state.pieceSequence.push(tetromino)
     })
   }
@@ -35,20 +37,23 @@ class Tetrion extends React.Component {
   }
 
   render() {
+    const { width, height, vanishZone, spawnAtY } = playfield
     return (
       <svg
         x="0"
         y="0"
-        width={playfield.width * blockSize}
-        height={(playfield.height + playfield.vanishZone) * blockSize}
+        width={width * blockSize}
+        height={(height + vanishZone[this.state.rotationSystem]) * blockSize}
         id="tetrion"
       >
-        <Playfield x={0} y={2 * blockSize} />
+        <Playfield x={0} y={vanishZone[this.state.rotationSystem] * blockSize} />
         <Tetromino
           x={3 * blockSize}
-          y={0}
+          y={spawnAtY[this.state.rotationSystem] * blockSize}
           type={this.state.currentTetromino}
-          angle={0} locked={false}
+          angle={0}
+          locked={false}
+          rotationSystem={this.state.rotationSystem}
         />
       </svg>
     )
