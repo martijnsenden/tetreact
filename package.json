@@ -41,7 +41,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack",
-    "deploy": "yarn run build && netlify deploy",
+    "deploy": "yarn run build && cp index.html ./public/index.html && cd public && sed -i *.bak 's/.\\/public/./g' *.html && rm *.bak && cd ..",
     "lint": "./node_modules/.bin/eslint \"src/**/*.js\" webpack.config.js",
     "test": "yarn run lint && NODE_ENV=test jest",
     "watch": "yarn run build -- --watch",
