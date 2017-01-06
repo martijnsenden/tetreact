@@ -41,7 +41,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack",
-    "deploy": "yarn run build && cp index.html ./public/index.html && mkdir ./public/public && mv ./public/*.js ./public/public/*.js",
+    "deploy": "rm -rf ./public && yarn run build && cp index.html ./public/index.html && mkdir -p ./public/public && mv ./public/*.js ./public/public/",
     "lint": "./node_modules/.bin/eslint \"src/**/*.js\" webpack.config.js",
     "test": "yarn run lint && NODE_ENV=test jest",
     "watch": "yarn run build -- --watch",
