@@ -1,10 +1,36 @@
 const blockSize = 24
 
+// See http://www.colourco.de/none/%23ae2b31%2C%235cc9c2%2C%23c26f34%2C%2330478f%2C%23d12e74%2C%233dbd3d%2C%23d2bf3f
+// for the colors or to adjust them.
+const colors = {
+  tgm: {
+    i: '#ae2b31',
+    t: '#5cc9c2',
+    l: '#c26f34',
+    j: '#30478f',
+    s: '#d12e74',
+    z: '#3dbd3d',
+    o: '#d2bf3f',
+  },
+  srs: {
+    i: '#5cc9c2',
+    t: '#d12e74',
+    l: '#c26f34',
+    j: '#30478f',
+    s: '#3dbd3d',
+    z: '#ae2b31',
+    o: '#d2bf3f',
+  },
+}
+
 const tetrominos = {
   i: {
     width: 4,
     height: 4,
-    fill: '#00FFFF',
+    fill: {
+      tgm: colors.tgm.i,
+      srs: colors.srs.i,
+    },
     angles: {
       0: {
         srs: [
@@ -67,7 +93,10 @@ const tetrominos = {
   j: {
     width: 3,
     height: 3,
-    fill: '#0000FF',
+    fill: {
+      tgm: colors.tgm.j,
+      srs: colors.srs.j,
+    },
     angles: {
       0: {
         srs: [
@@ -122,7 +151,10 @@ const tetrominos = {
   l: {
     width: 3,
     height: 3,
-    fill: '#FFA100',
+    fill: {
+      tgm: colors.tgm.l,
+      srs: colors.srs.l,
+    },
     angles: {
       0: {
         srs: [
@@ -177,7 +209,10 @@ const tetrominos = {
   o: {
     width: 4,
     height: 3,
-    fill: '#FFFF00',
+    fill: {
+      tgm: colors.tgm.o,
+      srs: colors.srs.o,
+    },
     angles: {
       0: {
         srs: [
@@ -232,7 +267,10 @@ const tetrominos = {
   s: {
     width: 3,
     height: 3,
-    fill: '#00FF00',
+    fill: {
+      tgm: colors.tgm.s,
+      srs: colors.srs.s,
+    },
     angles: {
       0: {
         srs: [
@@ -287,7 +325,10 @@ const tetrominos = {
   t: {
     width: 3,
     height: 3,
-    fill: '#8F00FF',
+    fill: {
+      tgm: colors.tgm.t,
+      srs: colors.srs.t,
+    },
     angles: {
       0: {
         srs: [
@@ -342,7 +383,10 @@ const tetrominos = {
   z: {
     width: 3,
     height: 3,
-    fill: '#FF0000',
+    fill: {
+      tgm: colors.tgm.z,
+      srs: colors.srs.z,
+    },
     angles: {
       0: {
         srs: [
@@ -416,6 +460,7 @@ const gravity = {
   8: 5,
   19: 6,
   35: 8,
+  180: 144,
 }
 
 const das = 40

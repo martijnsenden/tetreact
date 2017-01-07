@@ -23,17 +23,13 @@ const draw = (fn, boundThis, ...args) => {
       } else {
         fn(...args)
       }
-      before = now
     }
+    before = now
 
     return handle
   }
 
   return doDraw()
-}
-
-const dropTetromino = () => {
-
 }
 
 const drawingService = {

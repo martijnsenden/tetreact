@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "babel-preset-react": "^6.16.0",
+    "immutability-helper": "^2.1.0",
     "lodash": "^4.17.4",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
@@ -41,7 +42,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack",
-    "deploy": "rm -rf ./public && yarn run build && cp index.html ./public/index.html && mkdir -p ./public/public && mv ./public/*.js ./public/public/",
+    "deploy": "rm -rf ./public && yarn run build && cp index.html ./public/index.html && mkdir ./public/public && mv ./public/*.js ./public/public/",
     "lint": "./node_modules/.bin/eslint \"src/**/*.js\" webpack.config.js",
     "test": "yarn run lint && NODE_ENV=test jest",
     "watch": "yarn run build -- --watch",

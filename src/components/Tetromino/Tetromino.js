@@ -23,7 +23,7 @@ const Tetromino = (props) => {
                 y={rowIndex * blockSize}
                 width={blockSize}
                 height={blockSize}
-                fill={tetromino.fill}
+                fill={tetromino.fill[rotationSystem]}
               />
             )
           }
